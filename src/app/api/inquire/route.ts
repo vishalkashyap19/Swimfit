@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Swimfit <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL ?? "info@swimfit.com",
-      replyTo: email,
+      reply_to: email,
       subject: `[Batch Inquiry] ${program} — ${name}`,
       html: `
         <h2>New Batch Inquiry</h2>
