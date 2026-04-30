@@ -30,7 +30,7 @@ export async function sendContactEmail(formData: FormData) {
       resend.emails.send({
         from: "Swimfit Contact <onboarding@resend.dev>",
         to: TO,
-        replyTo: email,
+        reply_to: email,
         subject: `[Contact] ${subject} — ${name}`,
         html: `
           <h2>New contact from ${name}</h2>
@@ -76,7 +76,7 @@ export async function sendInquiryEmail(formData: FormData) {
     await resend.emails.send({
       from: "Swimfit Inquiry <onboarding@resend.dev>",
       to: TO,
-      replyTo: email,
+      reply_to: email,
       subject: `[Inquiry] ${program} — ${name}`,
       html: `
         <h2>New batch inquiry from ${name}</h2>
@@ -114,7 +114,7 @@ export async function sendBookingEmail(formData: FormData) {
     await resend.emails.send({
       from: "Swimfit Booking <onboarding@resend.dev>",
       to: TO,
-      replyTo: d.email,
+      reply_to: d.email,
       subject: `[Pool Party] ${d.package} — ${d.name}`,
       html: `
         <h2>Pool Party Booking from ${d.name}</h2>
