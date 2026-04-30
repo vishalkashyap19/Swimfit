@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --cyan: #00e5ff;
+  --blue: #0055cc;
+  --deep: #020d1a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #020d1a; color: #fff; overflow-x: hidden; }
+
+.gradient-text {
+  background: linear-gradient(90deg,#fff 0%,#00e5ff 35%,#fff 65%,#00b8d4 100%);
+  background-size: 250% 250%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite;
+}
+.glass-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(20px);
+  position: relative; overflow: hidden;
+  transition: box-shadow .35s, border-color .35s, transform .25s;
+}
+.glass-card::before {
+  content: ''; position: absolute;
+  inset-x: 1rem; top: 0; height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+}
+.glass-card:hover {
+  box-shadow: 0 0 0 1px rgba(0,229,255,.3), 0 20px 60px rgba(0,229,255,.12);
+  border-color: rgba(0,229,255,.28); transform: translateY(-4px);
+}
+.glow-icon { animation: glowPulse 2.5s ease-in-out infinite; }
+.float-anim { animation: floatY 4s ease-in-out infinite; }
+
+@keyframes gradientFlow { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+@keyframes glowPulse {
+  0%,100%{box-shadow:0 0 12px rgba(0,229,255,.35),0 0 24px rgba(0,229,255,.15)}
+  50%{box-shadow:0 0 24px rgba(0,229,255,.7),0 0 50px rgba(0,229,255,.3)}
+}
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+@keyframes bubbleRise {
+  0%{transform:translateY(0) scale(1);opacity:.7}
+  50%{transform:translateY(-50vh) scale(.85);opacity:.4}
+  100%{transform:translateY(-105vh) scale(.5);opacity:0}
+}
+@keyframes orbDrift1 {
+  0%,100%{transform:translate(0,0) scale(1)} 30%{transform:translate(70px,-50px) scale(1.06)} 60%{transform:translate(-40px,40px) scale(.96)}
+}
+@keyframes orbDrift2 {
+  0%,100%{transform:translate(0,0) scale(1)} 35%{transform:translate(-80px,55px) scale(1.04)} 70%{transform:translate(55px,-40px) scale(.97)}
+}
+@keyframes orbDrift3 {
+  0%,100%{transform:translate(0,0) scale(1)} 40%{transform:translate(60px,65px) scale(1.03)}
+}
+@keyframes orbDrift4 {
+  0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,-60px) scale(1.05)}
+}
+@keyframes rippleOut {
+  0%{transform:translate(-50%,-50%) scale(0);opacity:.85}
+  100%{transform:translate(-50%,-50%) scale(5);opacity:0}
+}
+@keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulseRing { 0%{transform:scale(1);opacity:.55} 100%{transform:scale(2.8);opacity:0} }
