@@ -8,7 +8,15 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: #020d1a; color: #fff; overflow-x: hidden; }
+body { background: #020d1a; color: #fff; overflow-x: hidden; isolation: isolate; }
+
+.bubble {
+  background: radial-gradient(circle at 30% 30%, rgba(0,229,255,0.7), rgba(0,100,200,0.3));
+  box-shadow: inset 0 0 12px rgba(0,229,255,0.4), 0 0 8px rgba(0,229,255,0.3);
+  animation-name: bubbleRise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 
 .gradient-text {
   background: linear-gradient(90deg,#fff 0%,#00e5ff 35%,#fff 65%,#00b8d4 100%);

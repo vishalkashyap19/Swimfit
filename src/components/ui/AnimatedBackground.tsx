@@ -24,29 +24,71 @@ export function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
 
-      {/* ── Underwater pool photo base ─────────────────── */}
-      {/* Using a high-quality Unsplash underwater pool image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=85&fit=crop')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      {/* ── Animated Swimmer Silhouettes ────────────────── */}
+      {[
+        { top: "15%", dur: "32s", delay: "0s", scale: 0.8, opacity: 0.2 },
+        { top: "45%", dur: "24s", delay: "-12s", scale: 1.1, opacity: 0.35 },
+        { top: "75%", dur: "38s", delay: "-20s", scale: 0.6, opacity: 0.15 },
+      ].map((swimmer, i) => (
+        <div 
+          key={`swimmer-${i}`}
+          className="absolute"
+          style={{
+            top: swimmer.top,
+            left: "-30%",
+            animation: `swimAcross ${swimmer.dur} linear ${swimmer.delay} infinite`,
+            opacity: swimmer.opacity,
+            filter: "drop-shadow(0 0 15px rgba(0,229,255,0.9))",
+            "--swimmer-scale": swimmer.scale,
+          } as React.CSSProperties}
+        >
+          <svg width="600" height="150" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Swimmer Body */}
+            <path d="M150 30 Q 110 26, 60 30" stroke="rgba(0,229,255,0.9)" strokeWidth="6" strokeLinecap="round" />
+            
+            {/* Head */}
+            <circle cx="164" cy="28" r="7" fill="rgba(0,229,255,0.9)" />
+            
+            {/* Animated Arm */}
+            <path 
+              className="swimmer-arm"
+              d="M140 30 Q 120 10, 90 30" 
+              stroke="rgba(0,229,255,0.9)" 
+              strokeWidth="4" 
+              strokeLinecap="round" 
+              fill="none" 
+            />
+
+            {/* Splashes */}
+            <path 
+              className="swimmer-splash"
+              d="M175 35 Q 185 25, 195 35" 
+              stroke="#ffffff" 
+              strokeWidth="3" 
+              strokeLinecap="round" 
+            />
+            <path 
+              className="swimmer-splash-2"
+              d="M50 35 Q 40 28, 30 35" 
+              stroke="#ffffff" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+            />
+          </svg>
+        </div>
+      ))}
 
       {/* ── Deep tint overlay — keeps text readable ─────── */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(2,13,26,0.72) 0%, rgba(0,21,53,0.60) 40%, rgba(0,29,74,0.68) 100%)",
+            "linear-gradient(180deg, rgba(2,13,26,0.50) 0%, rgba(0,21,53,0.35) 40%, rgba(0,29,74,0.45) 100%)",
         }}
       />
 
       {/* ── Animated caustic light patches ─────────────── */}
-      <div className="absolute inset-0" style={{ mixBlendMode: "screen", opacity: 0.18 }}>
+      <div className="absolute inset-0" style={{ mixBlendMode: "screen", opacity: 0.45 }}>
         {/* Caustic 1 */}
         <div
           className="absolute"
@@ -98,7 +140,7 @@ export function AnimatedBackground() {
       </div>
 
       {/* ── Animated light ray shafts ───────────────────── */}
-      <div className="absolute inset-0 overflow-hidden" style={{ opacity: 0.12 }}>
+      <div className="absolute inset-0 overflow-hidden" style={{ opacity: 0.35 }}>
         {[
           { left: "18%",  skew: "skewX(-8deg)",  delay: "0s",    dur: "6s",  w: 60 },
           { left: "34%",  skew: "skewX(-3deg)",  delay: "1.5s",  dur: "8s",  w: 40 },
@@ -133,8 +175,8 @@ export function AnimatedBackground() {
               0deg,
               transparent,
               transparent 60px,
-              rgba(0,229,255,0.025) 60px,
-              rgba(0,229,255,0.025) 61px
+              rgba(0,229,255,0.08) 60px,
+              rgba(0,229,255,0.08) 61px
             )
           `,
           animation: "waveShimmer 4s linear infinite",
@@ -142,8 +184,8 @@ export function AnimatedBackground() {
       />
 
       {/* ── Cyan orb glows (keep colour harmony) ────────── */}
-      <div className="absolute rounded-full" style={{ top:"-8%", left:"-6%", width:680, height:680, background:"radial-gradient(circle at 40% 40%,rgba(0,229,255,.38) 0%,rgba(0,102,204,.18) 45%,transparent 72%)", filter:"blur(72px)", animation:"orbDrift1 22s ease-in-out infinite" }} />
-      <div className="absolute rounded-full" style={{ bottom:"-12%", right:"-8%", width:750, height:750, background:"radial-gradient(circle at 55% 55%,rgba(0,80,200,.32) 0%,rgba(0,30,100,.18) 45%,transparent 70%)", filter:"blur(90px)", animation:"orbDrift2 28s ease-in-out infinite" }} />
+      <div className="absolute rounded-full" style={{ top:"-8%", left:"-6%", width:680, height:680, background:"radial-gradient(circle at 40% 40%,rgba(0,229,255,.55) 0%,rgba(0,102,204,.3) 45%,transparent 72%)", filter:"blur(72px)", animation:"orbDrift1 22s ease-in-out infinite" }} />
+      <div className="absolute rounded-full" style={{ bottom:"-12%", right:"-8%", width:750, height:750, background:"radial-gradient(circle at 55% 55%,rgba(0,80,200,.5) 0%,rgba(0,30,100,.3) 45%,transparent 70%)", filter:"blur(90px)", animation:"orbDrift2 28s ease-in-out infinite" }} />
 
       {/* ── Rising bubbles ───────────────────────────────── */}
       {bubbles.map(b => (
@@ -203,6 +245,24 @@ export function AnimatedBackground() {
           0%   { background-position-y: 0px; }
           100% { background-position-y: 61px; }
         }
+        @keyframes swimAcross {
+          0% { transform: translateX(0) scale(var(--swimmer-scale, 1)); }
+          100% { transform: translateX(150vw) scale(var(--swimmer-scale, 1)); }
+        }
+        @keyframes armStroke {
+          0% { transform: rotate(0deg) scaleY(1); transform-origin: 140px 30px; opacity: 1; }
+          40% { transform: rotate(-45deg) scaleY(1.5); transform-origin: 140px 30px; opacity: 0.8; }
+          50% { transform: rotate(-90deg) scaleY(0.5); transform-origin: 140px 30px; opacity: 0; }
+          100% { transform: rotate(0deg) scaleY(1); transform-origin: 140px 30px; opacity: 1; }
+        }
+        @keyframes splashFx {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+          25% { transform: translateY(-5px) scale(1.2); opacity: 0.8; }
+          50% { transform: translateY(5px) scale(0.8); opacity: 0; }
+        }
+        .swimmer-arm { animation: armStroke 1.5s ease-in-out infinite; }
+        .swimmer-splash { animation: splashFx 1.5s ease-out infinite; animation-delay: 0.2s; }
+        .swimmer-splash-2 { animation: splashFx 1.5s ease-out infinite; animation-delay: 0.8s; }
       `}</style>
     </div>
   );

@@ -9,6 +9,8 @@ const navItems = [
   { path: "/programs", label: "Programs" },
   { path: "/coaches", label: "Coaches" },
   { path: "/facilities", label: "Facilities" },
+  { path: "/achievements", label: "Achievements" },
+  { path: "/gallery", label: "Gallery" },
   { path: "/shop", label: "Shop" },
   { path: "/pool-party", label: "Pool Party" },
   { path: "/contact", label: "Contact" },
