@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const coach = coaches.find(c => c.slug === slug);
   if (!coach) return { title: "Coach Not Found" };
   return {
-    title: `${coach.name} | Swimfit Coaches`,
+    title: `${coach.name} | swimfit Coaches`,
     description: coach.bio,
   };
 }

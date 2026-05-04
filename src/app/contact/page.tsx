@@ -3,8 +3,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { ContactForm } from "@/components/ui/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Swimfit",
-  description: "Get in touch with Swimfit — book a trial, inquire about memberships, or ask us anything.",
+  title: "Contact Us | swimfit",
+  description: "Get in touch with swimfit — book a trial, inquire about memberships, or ask us anything.",
 };
 
 const contactInfo = [

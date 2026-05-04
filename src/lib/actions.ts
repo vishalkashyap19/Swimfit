@@ -28,7 +28,7 @@ export async function sendContactEmail(formData: FormData) {
     // Send email and save to Firebase concurrently
     await Promise.all([
       resend.emails.send({
-        from: "Swimfit Contact <onboarding@resend.dev>",
+        from: "swimfit Contact <onboarding@resend.dev>",
         to: TO,
         reply_to: email,
         subject: `[Contact] ${subject} — ${name}`,
@@ -74,7 +74,7 @@ export async function sendInquiryEmail(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: "Swimfit Inquiry <onboarding@resend.dev>",
+      from: "swimfit Inquiry <onboarding@resend.dev>",
       to: TO,
       reply_to: email,
       subject: `[Inquiry] ${program} — ${name}`,
@@ -112,7 +112,7 @@ export async function sendBookingEmail(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: "Swimfit Booking <onboarding@resend.dev>",
+      from: "swimfit Booking <onboarding@resend.dev>",
       to: TO,
       reply_to: d.email,
       subject: `[Pool Party] ${d.package} — ${d.name}`,

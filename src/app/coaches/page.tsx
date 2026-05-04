@@ -3,7 +3,7 @@ import { CoachCard } from "@/components/ui/CoachCard";
 import { coaches } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Expert Coaches | Swimfit",
+  title: "Expert Coaches | swimfit",
   description: "Meet our team of certified swimming coaches — each with years of experience and a passion for teaching.",
 };
 

@@ -190,7 +190,7 @@ function GalleryTile({
 }) {
   return (
     <div
-      className={`group relative cursor-pointer overflow-hidden rounded-2xl ${image.span === "tall" ? "row-span-2" : ""}`}
+      className={`group relative cursor-pointer overflow-hidden rounded-2xl h-full ${image.span === "tall" ? "row-span-2" : ""}`}
       style={{
         border: "1px solid rgba(255,255,255,0.10)",
         transition: "box-shadow .3s, border-color .3s, transform .25s",
@@ -207,7 +207,7 @@ function GalleryTile({
         (e.currentTarget as HTMLDivElement).style.transform = "";
       }}
     >
-      <div className={`relative w-full ${image.span === "tall" ? "h-full min-h-[420px]" : "aspect-[4/3]"}`}>
+      <div className="relative w-full h-full min-h-[200px]">
         <Image
           src={image.src}
           alt={image.alt}
@@ -265,7 +265,7 @@ export function GallerySection({ preview = false }: { preview?: boolean }) {
             Gallery
           </h2>
           <p className="text-white/65 text-lg max-w-2xl mx-auto">
-            Glimpses of the aquatic life at Swimfit — training, fun, and unforgettable memories
+            Glimpses of the aquatic life at swimfit — training, fun, and unforgettable memories
           </p>
         </div>
 
@@ -329,11 +329,9 @@ export function GallerySection({ preview = false }: { preview?: boolean }) {
             </div>
           </>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" style={{ gridAutoRows: "200px" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" style={{ gridAutoRows: "240px" }}>
             {displayItems.map((img, idx) => (
-              <div key={img.id} className="h-full">
-                <GalleryTile image={img} onClick={() => openLightbox(idx)} />
-              </div>
+              <GalleryTile key={img.id} image={img} onClick={() => openLightbox(idx)} />
             ))}
           </div>
         )}

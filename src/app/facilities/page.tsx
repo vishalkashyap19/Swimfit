@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GlassCard } from "@/components/ui/GlassCard";
 
 export const metadata: Metadata = {
-  title: "Pool & Facilities | Swimfit",
+  title: "Pool & Facilities | swimfit",
   description: "World-class pool infrastructure — two pools, UV sanitization, biometric attendance, CCTV, and more.",
 };
 

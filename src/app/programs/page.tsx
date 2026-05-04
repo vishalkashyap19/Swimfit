@@ -7,7 +7,7 @@ import { programs } from "@/lib/data";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coaching Programs | Swimfit",
+  title: "Coaching Programs | swimfit",
   description: "Expert-led swimming programs for all ages — kids, adults, professional, and fitness. Flexible batch timings.",
 };
 

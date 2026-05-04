@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { products } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Shop | Swimfit",
+  title: "Shop | swimfit",
   description: "Premium swimming gear — goggles, caps, swimwear and more. Available at our facility counter.",
 };
 
@@ -21,7 +21,7 @@ export default function ShopPage() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h1 className="gradient-text font-['Syne'] mb-4" style={{ fontSize: "clamp(2.5rem,6vw,4rem)", fontWeight: 800 }}>
-            Swimfit Shop
+            swimfit Shop
           </h1>
           <p className="text-white/65 text-lg max-w-2xl mx-auto mb-4">
             Premium swimming gear and accessories available at our facility

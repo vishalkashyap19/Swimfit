@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const { name, email, phone, program, batchTime } = result.data;
 
     await resend.emails.send({
-      from: "Swimfit <onboarding@resend.dev>",
+      from: "swimfit <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL ?? "info@swimfit.com",
       reply_to: email,
       subject: `[Batch Inquiry] ${program} — ${name}`,

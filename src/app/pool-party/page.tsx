@@ -4,7 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { partyPackages } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pool Party Events | Swimfit",
+  title: "Pool Party Events | swimfit",
   description: "Unforgettable pool party events — DJ, LED lights, catering, photography. Book for birthdays, corporate events, and more.",
 };
 
@@ -30,7 +30,7 @@ export default function PoolPartyPage() {
             Pool Party Events
           </h1>
           <p className="text-white/65 text-lg max-w-2xl mx-auto">
-            Make a splash with unforgettable celebrations at Swimfit. DJ, lights, music, and memories!
+            Make a splash with unforgettable celebrations at swimfit. DJ, lights, music, and memories!
           </p>
         </div>
 

@@ -95,7 +95,7 @@ export default function HomePage() {
               letterSpacing: "-.04em",
             }}
           >
-            Swimfit
+            swimfit
           </h1>
           <p
             className="text-white/72 mb-10 max-w-2xl mx-auto"
@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="font-['Syne'] text-4xl md:text-5xl font-bold text-white mb-4">
-              About Swimfit
+              About swimfit
             </h2>
             <p className="text-white/65 text-lg max-w-2xl mx-auto">
               Premier swimming academy with state-of-the-art facilities and

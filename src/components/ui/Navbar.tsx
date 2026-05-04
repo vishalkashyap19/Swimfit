@@ -42,9 +42,22 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#00e5ff] to-[#0055cc] flex items-center justify-center glow-icon hover:scale-110 hover:rotate-6 transition-transform">
-              <Waves className="w-5 h-5 text-white" />
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className="w-6 h-6 text-white"
+              >
+                <path d="M2 14c1.5 0 1.5 2 3 2s1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+                <circle cx="12" cy="8" r="2.5" />
+                <path d="M15 11c.5 0 1.5 .5 2 1.5" />
+                <path d="M9 11c-.5 0-1.5 .5-2 1.5" />
+              </svg>
             </div>
-            <span className="text-xl font-bold tracking-tight gradient-text">Swimfit</span>
+            <span className="text-xl font-bold tracking-tight gradient-text">swimfit</span>
           </Link>
 
           {/* Desktop links */}

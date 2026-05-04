@@ -70,7 +70,7 @@ const achievements: Achievement[] = [
   },
   {
     id: 6,
-    name: "Swimfit Team",
+    name: "swimfit Team",
     event: "Inter-Academy Relay Championship",
     year: 2024,
     category: "Competitions",
@@ -116,6 +116,14 @@ function Lightbox({
         {/* Certificate image */}
         <div className="relative w-full aspect-[4/3]">
           <Image src={a.image} alt={a.name} fill className="object-cover" />
+          
+          {/* Certificate Name Overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center pointer-events-none mix-blend-overlay">
+            <h4 className="text-white/90 font-['Syne'] text-3xl font-bold tracking-wide drop-shadow-lg">
+              {a.name}
+            </h4>
+          </div>
+
           <div
             className="absolute inset-0"
             style={{ background: "linear-gradient(to top,rgba(2,13,26,0.6) 0%,transparent 50%)" }}
@@ -123,7 +131,7 @@ function Lightbox({
         </div>
 
         {/* Info */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col items-center text-center">
           {a.medal && (
             <span
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-3"
@@ -138,8 +146,7 @@ function Lightbox({
             </span>
           )}
           <h3 className="font-['Syne'] text-xl font-bold text-white mb-1">{a.name}</h3>
-          <p className="text-white/65 text-sm mb-1">{a.event}</p>
-          <p className="text-[#00e5ff] text-xs">{a.year}</p>
+          <p className="text-white/60 text-sm mb-4">{a.event} • {a.year}</p>
         </div>
 
         {/* Nav */}
@@ -185,7 +192,7 @@ function AchievementCard({
       className={`glass-card overflow-hidden cursor-pointer group h-full ${achievement.featured && !preview ? "md:col-span-2 md:row-span-1" : ""}`}
       onClick={onClick}
     >
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col items-center text-center">
         {/* Certificate Thumbnail */}
         <div className={`relative w-full overflow-hidden rounded-xl mb-4 ${achievement.featured ? "aspect-[16/7]" : "aspect-[4/3]"}`}>
           <Image
@@ -195,6 +202,13 @@ function AchievementCard({
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
+          
+          {/* Certificate Name Overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none mix-blend-overlay">
+            <h4 className="text-white/90 font-['Syne'] text-xl md:text-2xl font-bold tracking-wide drop-shadow-md">
+              {achievement.name}
+            </h4>
+          </div>
           {/* Gradient overlay */}
           <div
             className="absolute inset-0"

@@ -5,11 +5,11 @@ import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 
 export const metadata: Metadata = {
-  title: "Swimfit — Professional Swimming Coaching",
+  title: "swimfit",
   description: "Premier swimming academy with expert coaches, state-of-the-art facilities, and flexible batch timings for all age groups.",
   keywords: ["swimming", "coaching", "swimming academy", "swim classes", "aqua fitness"],
   openGraph: {
-    title: "Swimfit — Professional Swimming Coaching",
+    title: "swimfit",
     description: "Train with experts. Build confidence. Swim smarter.",
     type: "website",
   },
